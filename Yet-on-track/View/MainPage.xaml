@@ -7,7 +7,8 @@
              x:Class="Yet_on_track.MainPage"
              Title="{Binding Title}">
 
-    <CollectionView ItemsSource="{Binding TimeRecords}">
+    <CollectionView ItemsSource="{Binding TimeRecordsGrouped}"
+                    IsGrouped="True">
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="model:TimeRecord">
                 <Frame CornerRadius="0">
@@ -35,6 +36,13 @@
                 </Frame>
             </DataTemplate>
         </CollectionView.ItemTemplate>
+        <CollectionView.GroupHeaderTemplate>
+            <DataTemplate x:DataType="model:TimeRecordGroup">
+                <Frame CornerRadius="0" WidthRequest="200">
+                    <Label Text="{Binding Name}"/>
+                </Frame>
+            </DataTemplate>
+        </CollectionView.GroupHeaderTemplate>
     </CollectionView>
 
 </ContentPage>
