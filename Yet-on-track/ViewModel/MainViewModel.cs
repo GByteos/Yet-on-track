@@ -9,8 +9,14 @@ using System.Threading.Tasks;
 
 namespace Yet_on_track.ViewModel;
 
-public partial class MainViewModel : ObservableObject
+public partial class MainViewModel : BaseViewModel
 {
+
+    public MainViewModel()
+    {
+        Title = "Yet On Track - Time Tracker";
+    }
+
     [RelayCommand]
     public void PushNotification()
     {
