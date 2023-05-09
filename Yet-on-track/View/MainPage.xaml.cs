@@ -4,13 +4,13 @@ namespace Yet_on_track;
 
 public partial class MainPage : ContentPage
 {
-	
 
-	public MainPage(MainViewModel vm)
-	{
-		InitializeComponent();
 
-		BindingContext = vm;
-	}
+    public MainPage(MainViewModel vm)
+    {
+        InitializeComponent();
+
+        BindingContext = vm;
+    }
 }
 

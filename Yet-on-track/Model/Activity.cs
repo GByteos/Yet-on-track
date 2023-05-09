@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Yet_on_track.Model;
 
-namespace Yet_on_track.Model
+/// <summary>
+/// Describes an activity, that can be bound to time records
+/// </summary>
+public class Activity
 {
-    internal class Activity
-    {
-    }
+    public string Id { get; set; }
+    public string Name { get; set; }
+    public string Description { get; set; }
 }

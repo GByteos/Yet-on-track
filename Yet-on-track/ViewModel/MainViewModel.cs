@@ -1,11 +1,6 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CommunityToolkit.Mvvm.Input;
+using System.Collections.ObjectModel;
+using Yet_on_track.Model;
 
 namespace Yet_on_track.ViewModel;
 
@@ -15,7 +10,20 @@ public partial class MainViewModel : BaseViewModel
     public MainViewModel()
     {
         Title = "Yet On Track - Time Tracker";
+
+        // add some sample data for now
+        for (int i = 1; i < 10; i++)
+        {
+            TimeRecords.Add(new TimeRecord
+            {
+                Id = i,
+                Start = DateTime.Now.AddMinutes(-100 + i * 10),
+                End = DateTime.Now.AddMinutes(-100 + i * 11)
+            });
+        }
     }
+
+    public ObservableCollection<TimeRecord> TimeRecords { get; set; } = new();
 
     [RelayCommand]
     public void PushNotification()
