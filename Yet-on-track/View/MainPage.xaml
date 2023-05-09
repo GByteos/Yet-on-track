@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodel="clr-namespace:Yet_on_track.ViewModel"
              x:DataType="viewmodel:MainViewModel"
-             x:Class="Yet_on_track.MainPage">
+             x:Class="Yet_on_track.MainPage"
+             Title="{Binding Title}">
 
     <ScrollView>
         <VerticalStackLayout
