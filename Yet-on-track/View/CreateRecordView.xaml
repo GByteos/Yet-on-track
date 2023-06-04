@@ -1,13 +1,41 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Yet_on_track.ViewModel"
+             x:DataType="viewmodel:CreateRecordViewModel"
              x:Class="Yet_on_track.View.CreateRecordView"
-             Title="CreateRecordView">
+             Title="New Record">
     <VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Label 
+                Text="Start Time"
+                VerticalOptions="Center"
+                />
+            <DatePicker/>
+            <TimePicker/>
+        </VerticalStackLayout>
         <Label 
-            Text="New Record"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+                Text="End Time"
+                VerticalOptions="Center"
+                />
         <DatePicker/>
+        <TimePicker/>
+        <Picker Title="Task">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Baboon</x:String>
+                    <x:String>Capuchin Monkey</x:String>
+                    <x:String>Blue Monkey</x:String>
+                    <x:String>Squirrel Monkey</x:String>
+                    <x:String>Golden Lion Tamarin</x:String>
+                    <x:String>Howler Monkey</x:String>
+                    <x:String>Japanese Macaque</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Button Text="Add"/>
+
     </VerticalStackLayout>
 </ContentPage>
