@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using Yet_on_track.View;
 using Yet_on_track.ViewModel;
 
 namespace Yet_on_track;
@@ -23,8 +24,10 @@ public static class MauiProgram
 #endif
 
         builder.Services.AddSingleton<MainViewModel>();
+        builder.Services.AddSingleton<CreateRecordView>();
 
         builder.Services.AddSingleton<MainPage>();
+        builder.Services.AddSingleton<CreateRecordViewModel>();
 
         return builder.Build();
     }

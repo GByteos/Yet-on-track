@@ -6,43 +6,45 @@
              x:DataType="viewmodel:MainViewModel"
              x:Class="Yet_on_track.MainPage"
              Title="{Binding Title}">
-
-    <CollectionView ItemsSource="{Binding TimeRecordsGrouped}"
-                    IsGrouped="True">
-        <CollectionView.ItemTemplate>
-            <DataTemplate x:DataType="model:TimeRecord">
-                <Frame CornerRadius="0">
-                    <Grid RowDefinitions="*,*"
-                          ColumnDefinitions="20,*,*,20">
-                        <Label Text="{Binding Id}"
-                               Grid.Row="0"
-                               Grid.Column="0"/>
-                        <Button Text="+"
-                                Grid.Row="0"
-                                Grid.Column="0"
-                                Style="{StaticResource SmallButton}"/>
-                        <Label Text="{Binding Start}"
-                               Grid.Row="1"
-                               Grid.Column="1"/>
-                        <Label Text="{Binding End}"
-                               Grid.Row="1"
-                               Grid.Column="2"
-                               HorizontalTextAlignment="End"/>
-                        <Button Text="+"
-                                Grid.Row="1"
-                                Grid.Column="4"
-                                Style="{StaticResource SmallButton}"/>
-                    </Grid>
-                </Frame>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-        <CollectionView.GroupHeaderTemplate>
-            <DataTemplate x:DataType="model:TimeRecordGroup">
-                <Frame CornerRadius="0" WidthRequest="200">
-                    <Label Text="{Binding Name}"/>
-                </Frame>
-            </DataTemplate>
-        </CollectionView.GroupHeaderTemplate>
-    </CollectionView>
+    <VerticalStackLayout>
+        <CollectionView ItemsSource="{Binding TimeRecordsGrouped}"
+                        IsGrouped="True">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:TimeRecord">
+                    <Frame CornerRadius="0">
+                        <Grid RowDefinitions="*,*"
+                              ColumnDefinitions="20,*,*,20">
+                            <Label Text="{Binding Id}"
+                                   Grid.Row="0"
+                                   Grid.Column="0"/>
+                            <Button Text="+"
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Style="{StaticResource SmallButton}"/>
+                            <Label Text="{Binding Start}"
+                                   Grid.Row="1"
+                                   Grid.Column="1"/>
+                            <Label Text="{Binding End}"
+                                   Grid.Row="1"
+                                   Grid.Column="2"
+                                   HorizontalTextAlignment="End"/>
+                            <Button Text="+"
+                                    Grid.Row="1"
+                                    Grid.Column="4"
+                                    Style="{StaticResource SmallButton}"/>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            <CollectionView.GroupHeaderTemplate>
+                <DataTemplate x:DataType="model:TimeRecordGroup">
+                    <Frame CornerRadius="0" WidthRequest="200">
+                        <Label Text="{Binding Name}"/>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.GroupHeaderTemplate>
+        </CollectionView>
+        <Button Text="Add" Command="{Binding GoToAddTimeRecordCommand}"/>
+    </VerticalStackLayout>
 
 </ContentPage>

@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Security.Cryptography.X509Certificates;
 using Yet_on_track.Model;
+using Yet_on_track.View;
 
 namespace Yet_on_track.ViewModel;
 
@@ -47,5 +48,11 @@ public partial class MainViewModel : BaseViewModel
     public void PushNotification()
     {
         Shell.Current.DisplayAlert("Button Clicked", "The button was clicked", "OK");
+    }
+
+    [RelayCommand]
+    public async Task GoToAddTimeRecord()
+    {
+        await Shell.Current.GoToAsync($"{nameof(CreateRecordView)}");
     }
 }

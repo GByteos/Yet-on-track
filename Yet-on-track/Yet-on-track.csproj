@@ -58,4 +58,10 @@
 	  <Folder Include="Services\" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <MauiXaml Update="View\CreateRecordView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>
